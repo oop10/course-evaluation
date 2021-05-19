@@ -16,6 +16,9 @@ public class Subject {
 	
 	private String code;	// Subject code (ex. 09805)
 	private String title;	// Subject title (ex. Object-Oriented Programming)
+	
+	/*
+	// class class 생성 후 사용할 부분
 	private Class[] classes;
 	
 	public double getAverage() {
@@ -45,6 +48,7 @@ public class Subject {
 			elem.printInformation();
 		}
 	}
+	*/
 	
 	// Accessor methods
 	public String getCode() {
@@ -55,7 +59,7 @@ public class Subject {
 		return this.title;
 	}
 	
-	// Mutator methods	
+	// Mutator methods
 	public void setCode(String code)	{
 		this.code = code;
 	}
@@ -64,9 +68,17 @@ public class Subject {
 		this.title = title;
 	}
 	
+	// Constructor
+	
+	public Subject(String title, String code)	{
+		this.code = code;
+		this.title = title;
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		Subject oop = new Subject("Object-Oriented Programming", "09805");
+		System.out.println("Subject Code: " + oop.getCode() + "\nSubject Title: " + oop.getTitle());
 	}
 
 }
