@@ -1,9 +1,15 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Demo {
+	
+	private static final String DB_FILE = "information.txt";	// location of database file
 
 	public static void main(String[] args) {
-
+		/*
 		final int maxStudentNum = 50;
 		
 		String status,name,id;
@@ -77,5 +83,27 @@ public class Demo {
 			System.out.println(e.getMessage());
 			System.exit(0);
 		}
+		*/
+		
+		// Read Subjects and Classes.
+		BufferedReader inputStream;
+		try {
+			inputStream = new BufferedReader(new FileReader(DB_FILE));
+			String line = null;
+			line = inputStream.readLine();	// 첫줄생략
+			while((line = inputStream.readLine()) != null) {
+				String[] ary = line.split(",");
+				Classes elem = new Classes(ary[0], ary[1].substring(0, 5), "NO CLASSROOM", ary[1]);
+				System.out.println(Subject.getSubject(elem.getCode()).getTitle());
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 	}
 }

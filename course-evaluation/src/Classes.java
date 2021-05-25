@@ -43,6 +43,7 @@ public class Classes extends Subject{
 		super(title, code);
 		this.classRoomNum = classRoomNum;
 		this.classID = classID;
+		Subject.getSubject(code, title).appendClass(this);		
 	}
 	
 	public static void main(String[] args) {
