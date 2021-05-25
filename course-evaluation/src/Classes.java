@@ -17,10 +17,19 @@ public class Classes extends Subject{
 	private Evaluation[] evaluation;
 	private Professor professor;
 	
-	public void appendEvaluation(Evaluation[] newEvaluation){
-		this.evaluation = newEvaluation;
+	public void appendEvaluation(){
+		Evaluation[] newEvaluation = new Evaluation[]
+	}
+
+	public void setProfessor(String newprofessor) {
+		this.professor = newprofessor;
+	}
+	
+	public String getProfessor() {
+		return this.professor;
 	}
 	*/
+	
 	//Accessor methods
 	public String getclassRoomNum() {
 		return this.classRoomNum;
@@ -37,7 +46,6 @@ public class Classes extends Subject{
 	public void setclassID(String newclassID) {
 		this.classID = newclassID;
 	}
-	
 	//Constructor
 	public Classes(String title, String code, String classRoomNum, String classID) {
 		super(title, code);
