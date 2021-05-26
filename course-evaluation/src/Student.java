@@ -2,9 +2,11 @@ import java.io.*;
 
 public class Student extends Person{
 
-	private int maxClasses = 3;
+	private int maxClasses = 10;
+	private int classCount = 0;
 	private String password;
 	private Evaluation[] evaluate = new Evaluation[maxClasses];
+	private Class[] classes = new Class[maxClasses];
 	
 	//Constructor
 	public Student(String name,String id,String password) {
@@ -13,11 +15,17 @@ public class Student extends Person{
 	}
 	
 	//Method
+	public void appendClasses(Class newClass) {
+		classes[classCount] = newClass;
+		classCount++;
+	}
 	public void getEvaluationByClass(int selectSubject) {
 		evaluate[selectSubject] = new Evaluation();
 		evaluate[selectSubject].setEvalution();
 		evaluate[selectSubject].getEvalution();
+		classes[selectSubject].appendEvaluation(evaluate[selectSubject]);
 	}
+	
 	@Override
 	public boolean canLogin() throws IOException {
 		BufferedReader inputStream = null;
