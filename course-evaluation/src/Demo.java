@@ -4,8 +4,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-import teamproject.Professor;
-import teamproject.Student;
+// import teamproject.Professor;
+// import teamproject.Student;
 
 public class Demo {
 	
@@ -106,8 +106,14 @@ public class Demo {
 			line = inputStream.readLine();	// 첫줄생략
 			while((line = inputStream.readLine()) != null) {
 				String[] ary = line.split(",");
+				//System.out.println(line);
 				Classes elem = new Classes(ary[0], ary[1].substring(0, 5), "NO CLASSROOM", ary[1]);
 				System.out.println(Subject.getSubject(elem.getCode()).getTitle());
+				for(int i = 3; i < ary.length; i++)
+				{
+					Student tmp = new Student("이름", ary[i]);
+					tmp.appendClasses(elem);
+				}
 			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
