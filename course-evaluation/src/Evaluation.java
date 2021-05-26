@@ -2,21 +2,9 @@ import java.util.Scanner;
 
 public class Evaluation {
 	
-	static int[] scores = new int[5];
+	private int[] scores = new int[5];
 	
-//	public int setEvalution() {
-//		
-//	}
-//	
-//	public int getEvalution() {
-//		
-//	}
-	
-	
-
-	public static void main(String[] args) {
-		
-	//	Student student = new Student();
+	public void setEvalution() {
 		
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("This program is to evalute the your course.\n");
@@ -57,6 +45,14 @@ public class Evaluation {
 			scores[4]=keyboard.nextInt();
 		
 		}
-		System.out.println("Check your evaluation score : " + scores[0] +" " + scores[1] + " " + scores[2] + " " + scores[3] + " " + scores[4]);
+		
 	}
+	
+	public void getEvalution() {
+		
+		System.out.println("Check your evaluation score : " + scores[0] +" " + scores[1] + " " + scores[2] + " " + scores[3] + " " + scores[4]);
+		
+	}
+	
+
 }	
