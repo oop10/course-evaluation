@@ -13,22 +13,24 @@
 public class Classes extends Subject{
 	private String classRoomNum;	//class Room number (ex. 415) or webex url
 	private String classID;		//class ID (ex. 09437001)
-	/*
+	private static int MAX_EVALUATION = 100;
+	
 	private Evaluation[] evaluation;
 	private Professor professor;
+	private int numberOfEvaluations = 0;
 	
-	public void appendEvaluation(){
-		Evaluation[] newEvaluation = new Evaluation[]
+	public void appendEvaluation(Evaluation obj) {
+		this.evaluation[this.numberOfEvaluations++] = obj;
 	}
 
-	public void setProfessor(String newprofessor) {
+	public void setProfessor(Professor newprofessor) {
 		this.professor = newprofessor;
 	}
 	
-	public String getProfessor() {
+	public Professor getProfessor() {
 		return this.professor;
 	}
-	*/
+	
 	
 	//Accessor methods
 	public String getclassRoomNum() {
