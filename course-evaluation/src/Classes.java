@@ -13,6 +13,7 @@
 public class Classes extends Subject{
 	private String classRoomNum;	//class Room number (ex. 415) or webex url
 	private String classID;		//class ID (ex. 09437001)
+	
 	/*
 	private Evaluation[] evaluation;
 	private Professor professor;
