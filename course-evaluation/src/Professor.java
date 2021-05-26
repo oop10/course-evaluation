@@ -17,7 +17,7 @@ public class Professor extends Person{
 			String line = null;
 			line = inputStream.readLine();
 			while((line = inputStream.readLine()) != null) {
-				String[] ary = line.split(" ");
+				String[] ary = line.split(",");
 					if(id.equals(ary[2])) {
 						subject[j] = ary[0] + "-" + ary[1];
 						j++;
@@ -46,4 +46,21 @@ public class Professor extends Person{
 		}
 	}
 	
+	public void addSubject(String subjectName, String classId,String professorId,String studentId) {
+		PrintWriter outputStream = null;
+		try {
+			outputStream = new PrintWriter(new FileWriter("information.txt",true));
+			
+			String line = subjectName + "," + classId + "," + professorId + "," + studentId + "\n";
+			System.out.println(line);
+			outputStream.println(line);
+		}catch(Exception e){
+			System.out.println("exception!");
+			System.exit(0);
+		}
+		if(outputStream != null) {
+			outputStream.close();
+		}
+		
+	}
 }

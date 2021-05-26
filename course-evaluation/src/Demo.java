@@ -4,6 +4,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
+import teamproject.Professor;
+import teamproject.Student;
+
 public class Demo {
 	
 	private static final String DB_FILE = "information.txt";	// location of database file
@@ -42,6 +45,8 @@ public class Demo {
 					if(evaluateSubject < user.getSubjectLength()) {
 						System.out.println("SUBJECT : " + user.subject[evaluateSubject]);
 						System.out.println("Start evaluate");
+						user.getEvaluationByClass(evaluateSubject);
+						
 					}
 					else {
 						throw new Exception("Exception : select wrong subject number");
@@ -55,11 +60,9 @@ public class Demo {
 			//professor
 			else if(status.equals("professor") || status.equals("p")){
 				Professor user = new Professor(name,id);
-				if(user.canLogin()) {
-					
-				}
+				if(user.canLogin()) {}
 				else {
-					System.out.println("there is no subject you educate");
+					System.out.println("there is no subject");
 				}
 				System.out.println("If you want to add new subject, enter -1");
 				System.out.print("Selecte subject(want to show result) : ");
@@ -67,7 +70,16 @@ public class Demo {
 				if(selectSubject < user.getSubjectLength()) {
 					if(selectSubject == -1) {
 						//addSubject
-						
+						System.out.print("Enter new subject name : ");
+						input.nextLine();
+						String newSubjectName = input.nextLine();
+						System.out.print("Enter new subject id : ");
+						String classId = input.next();
+						input.nextLine();
+						System.out.println("split with ','");
+						System.out.print("Write all student id in the class : ");
+						String studentIds = input.nextLine();
+						user.addSubject(newSubjectName, classId,id,studentIds);
 					}
 					else {
 						System.out.println("SUBJECT : " + user.subject[selectSubject]);
@@ -83,6 +95,7 @@ public class Demo {
 			System.out.println(e.getMessage());
 			System.exit(0);
 		}
+	}
 		*/
 		
 		// Read Subjects and Classes.

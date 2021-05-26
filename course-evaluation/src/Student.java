@@ -2,8 +2,9 @@ import java.io.*;
 
 public class Student extends Person{
 
+	private int maxClasses = 3;
 	private String password;
-	private String[] Evaluation;
+	private Evaluation[] evaluate = new Evaluation[maxClasses];
 	
 	//Constructor
 	public Student(String name,String id,String password) {
@@ -12,6 +13,11 @@ public class Student extends Person{
 	}
 	
 	//Method
+	public void getEvaluationByClass(int selectSubject) {
+		evaluate[selectSubject] = new Evaluation();
+		evaluate[selectSubject].setEvalution();
+		evaluate[selectSubject].getEvalution();
+	}
 	@Override
 	public boolean canLogin() throws IOException {
 		BufferedReader inputStream = null;
@@ -21,7 +27,7 @@ public class Student extends Person{
 			String line = null;
 			line = inputStream.readLine();
 			while((line = inputStream.readLine()) != null) {
-				String[] ary = line.split(" ");
+				String[] ary = line.split(",");
 				for(int i = 3; i < ary.length; i++) {
 					if(id.equals(ary[i])) {
 						subject[j] = ary[0] + "-" + ary[1];
@@ -57,5 +63,4 @@ public class Student extends Person{
 	public String getPassword() {
 		return password;
 	}
-
 }
