@@ -23,11 +23,9 @@ public class Demo {
          System.out.println("3. 종료");
          i = keyboard.nextInt();
          
-         BufferedReader inputStream = null;
-         
          //1. 강의 평가 보기
          if(i == 1) {
-            // Read Subjects and Classes.
+            BufferedReader inputStream = null;
             try {
                inputStream = new BufferedReader(new FileReader(DB_FILE));
                String line = null;
@@ -60,6 +58,7 @@ public class Demo {
             
             Student user = new Student(name,id,pwd);
             
+            BufferedReader inputStream = null;
             try {
                 inputStream = new BufferedReader(new FileReader(DB_FILE));
                 String line = null;
@@ -90,7 +89,6 @@ public class Demo {
             System.out.println("Start evaluate : " + user.getSpecificClassesName(evaluateSubject));
             user.getEvaluationByClass(evaluateSubject);
          }
-         
       }
    }
 }
