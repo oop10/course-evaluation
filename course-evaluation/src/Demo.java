@@ -33,8 +33,8 @@ public class Demo {
                line = inputStream.readLine();   // 첫줄생략
                while((line = inputStream.readLine()) != null) {
                   String[] ary = line.split(",");
-                  Classes elem = new Classes(ary[0], ary[1].substring(0, 5), "NO CLASSROOM", ary[1]);
-                  System.out.println(Subject.getSubject(elem.getCode()).getTitle());
+                  Classes elem = new Classes(ary[1], ary[0].substring(0, 5), ary[2], ary[0], ary[3], ary[4]);
+                  System.out.println("Import ... " + elem.getCode() + " / " + Subject.getSubject(elem.getCode()).getTitle());
                }
             } catch (FileNotFoundException e) {
                // TODO Auto-generated catch block
@@ -45,6 +45,28 @@ public class Demo {
             } finally {
             	inputStream.close();
             }
+            
+            try {
+            	System.out.println("평가를 확인할 과목번호를 입력하세요 (ex. 12345) : ");
+            	String test = keyboard.next();
+            	Subject obj = Subject.getSubject(test);
+
+            	if(obj == null)	{
+            		throw new Exception("존재하지 않는 과목입니다. 학수번호를 확인하세요.");
+            	}
+            	
+            	obj.printInformation();
+            	System.out.println("* 평균 평가점수: " + obj.getAverage());
+            	System.out.println("* 모든 평가:");
+            	obj.printAllEvaluation();
+            	System.out.println("* 모든 분반:");
+            	obj.printAllClass();
+            }
+            catch(Exception e){
+            	System.out.println(e.getMessage());
+            	// e.printStackTrace();
+            }
+           
          }
          
          //2. 강의 평가 추가 / 수정하기 - student action
@@ -68,7 +90,7 @@ public class Demo {
                 	String[] ary = line.split(",");
                 	for(i = 2; i < ary.length; i++) {
                 		if(id.equals(ary[i])) {
-                			Classes elem = new Classes(ary[0], ary[1].substring(0, 5), "NO CLASSROOM", ary[1]);
+                			Classes elem = new Classes(ary[1], ary[0].substring(0, 5), ary[2], ary[0], ary[3], ary[4]);
                         	user.appendClasses(elem);
                 		}
                 	}

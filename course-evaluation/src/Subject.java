@@ -33,8 +33,13 @@ public class Subject {
 		this.classes[this.numberOfClasses++] = obj;		
 	}
 	
-	/*
-	public double getAverage() {
+	
+	public double getAverage() throws Exception {
+		
+		if(this.numberOfClasses == 0)	{
+			throw new Exception("No Evaluation.");
+		}
+		
 		double score = 0;
 		
 		// Get sum of every class's average evaluation score.
@@ -46,22 +51,33 @@ public class Subject {
 		return score;
 	}
 	
-	public void printAllEvaluation()	{
+	public void printAllEvaluation() throws Exception	{
+		if(this.numberOfClasses == 0)	{
+			throw new Exception("No Evaluation.");
+		}
 		// Print every evaluation in classes.
 		for(Classes elem: this.classes) {
 			// Print every evaluation in given class.
-			elem.printAllEvalution();
+			elem.printAllEvaluation();
 		}
 	}
 	
-	public void printAllClass()	{
+	public void printAllClass() throws Exception	{
+		if(this.numberOfClasses == 0)	{
+			throw new Exception("No Evaluation.");
+		}
 		// Print information about every class.
-		for(Classes elem: this.classes) {
+		for(int i = 0; i < this.classes.length; i++)	{
 			// Print information about given class.
-			elem.printInformation();
+			System.out.println(i + ".");
+			this.classes[i].printInformation();
 		}
 	}
-	*/
+	
+	public void printInformation() {
+		System.out.println("Subject Code: " + this.getCode() + "\nSubject Title: " + this.getTitle());
+	}
+	
 	
 	
 	// Accessor methods

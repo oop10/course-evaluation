@@ -48,10 +48,18 @@ public class Evaluation {
 		
 	}
 	
-	public void getEvalution() {
+	public void printEvaluation() {
 		
 		System.out.println("Check your evaluation score : " + scores[0] +" " + scores[1] + " " + scores[2] + " " + scores[3] + " " + scores[4]);
 		
+	}
+	
+	public int getEvaluation()	{
+		int score = 0;
+		for(int elem: scores) {
+			score += elem;
+		}
+		return score;
 	}
 	
 
