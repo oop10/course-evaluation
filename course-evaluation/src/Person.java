@@ -1,16 +1,10 @@
-
-import java.io.IOException;
-
 abstract public class Person {
 
 	public static int maxsubject = 10;
 	
-	public String id;
-	public String[] subject = new String[maxsubject];
-	public int subjectLength = 0;
-	
 	private String status;
 	private String name;
+	private String id;
 	
 	//Constructor
 	public Person(String status, String name, String id) {
@@ -19,9 +13,7 @@ abstract public class Person {
 		this.id = id;
 	}
 	
-	//Method
-	abstract public boolean canLogin() throws IOException;
-	
+	//Mutator
 	public void setStatus(String status) {
 		this.status = status;
 	}
@@ -31,6 +23,8 @@ abstract public class Person {
 	public void setId(String id) {
 		this.id = id;
 	}
+	
+	//Accesor
 	public String getStatus() {
 		return status;
 	}
@@ -40,9 +34,4 @@ abstract public class Person {
 	public String getId() {
 		return id;
 	}
-	public int getSubjectLength() {
-		return subjectLength;
-	}
-	
-	
 }
