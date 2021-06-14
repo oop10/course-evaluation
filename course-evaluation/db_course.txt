@@ -1,0 +1,5 @@
+학수번호,과목명,교수자번호,교수자이름,강의실
+09805001,Object-Oriented Programming,IT대학-304,123456789,노웅기
+09805005,Object-Oriented Programming,IT대학-311,343491234,최재혁
+11900001,Data Structures,IT대학-305,343421234,최재영
+10380001,Probability & Statistics,IT대학-412,343421234,최재영

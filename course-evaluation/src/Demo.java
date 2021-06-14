@@ -6,7 +6,8 @@ import java.util.Scanner;
 
 public class Demo {
    
-   private static final String DB_FILE = "information.txt";   // location of database file
+   private static final String COURSE_DB_FILE = "db_course.txt";   // location of course database file
+   private static final String STUDENT_DB_FILE = "db_student.txt";   // location of student database file
 
    public static void main(String[] args) throws IOException {
       final int maxStudentNum = 50;
@@ -27,7 +28,7 @@ public class Demo {
          if(i == 1) {
             BufferedReader inputStream = null;
             try {
-               inputStream = new BufferedReader(new FileReader(DB_FILE));
+               inputStream = new BufferedReader(new FileReader(COURSE_DB_FILE));
                String line = null;
                line = inputStream.readLine();   // 첫줄생략
                while((line = inputStream.readLine()) != null) {
@@ -60,7 +61,7 @@ public class Demo {
             
             BufferedReader inputStream = null;
             try {
-                inputStream = new BufferedReader(new FileReader(DB_FILE));
+                inputStream = new BufferedReader(new FileReader(COURSE_DB_FILE));
                 String line = null;
                 line = inputStream.readLine();   // 첫줄생략
                 while((line = inputStream.readLine()) != null) {
