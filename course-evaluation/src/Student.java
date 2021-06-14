@@ -21,7 +21,6 @@ public class Student extends Person{
 	public void getEvaluationByClass(int selectSubject) {
 		evaluate[selectSubject] = new Evaluation();
 		evaluate[selectSubject].setEvalution();
-		evaluate[selectSubject].getEvalution();
 		classes[selectSubject].appendEvaluation(evaluate[selectSubject]);
 	}
 	
