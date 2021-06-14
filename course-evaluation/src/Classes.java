@@ -16,7 +16,7 @@ public class Classes extends Subject{
 	private static int MAX_EVALUATION = 100;
 	
 	private Evaluation[] evaluation = new Evaluation[MAX_EVALUATION];
-	private Professor professor;
+	private String professor;
 	private int numberOfEvaluations = 0;
 	
 	public void appendEvaluation(Evaluation obj) {
@@ -24,11 +24,11 @@ public class Classes extends Subject{
 		this.evaluation[this.numberOfEvaluations ++] = obj;
 	}
 
-	public void setProfessor(Professor newprofessor) {
+	public void setProfessor(String newprofessor) {
 		this.professor = newprofessor;
 	}
 	
-	public Professor getProfessor() {
+	public String getProfessor() {
 		return this.professor;
 	}
 	
