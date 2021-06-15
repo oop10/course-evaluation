@@ -1,24 +1,13 @@
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JTextField;
-import javax.swing.JLabel;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import java.awt.BorderLayout;
+import java.io.*;
 import javax.swing.*;
-import javax.swing.SwingConstants;
+import java.awt.*;
+import java.awt.event.*;
 
 
 public class ShowEvaluation {
 
 	private JFrame frame;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -32,16 +21,11 @@ public class ShowEvaluation {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
+
 	public ShowEvaluation() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 500, 500);
@@ -57,13 +41,13 @@ public class ShowEvaluation {
 		
 		JButton btnNewButton = new JButton("\uBA54\uC778\uC73C\uB85C \uB3CC\uC544\uAC00\uAE30");
 		btnNewButton.setBounds(362, 416, 97, 23);
-		btnNewButton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerforemed(ActionEvent e) {
-				new MenuSelect();
-				frame.setVisible(false);
-			}
-			});
+//		btnNewButton.addActionListener(new ActionListener() {
+//			@Override
+//			public void actionPerforemed(ActionEvent e) {
+//				new MenuSelect();
+//				frame.setVisible(false);
+//			}
+//			});
 
 		frame.getContentPane().add(btnNewButton);
 	}
