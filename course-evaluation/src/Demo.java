@@ -79,7 +79,7 @@ public class Demo {
             System.out.print("Enter your own pwd : ");
             String pwd = keyboard.next();
             
-            Student user = new Student(name,id,pwd);
+            Student user = new Student(name,id);
             
             BufferedReader inputStream = null;
             try {

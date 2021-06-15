@@ -4,6 +4,12 @@ public class Evaluation {
 	
 	private int[] scores = new int[5];
 	
+	public void setScores(int[] newScore) {
+		for(int i = 0; i < 5; i++) {
+			scores[i] = newScore[i];
+		}
+	}
+	/*// CLI -> GUI
 	public void setEvalution() {
 		
 		Scanner keyboard = new Scanner(System.in);
@@ -46,7 +52,7 @@ public class Evaluation {
 		
 		}
 		
-	}
+	}*/
 	
 	public void printEvaluation() {
 		

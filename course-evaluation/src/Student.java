@@ -1,16 +1,14 @@
 
 public class Student extends Person{
 
-	private int maxClasses = 10;
+	public static final int maxClass = 100;
 	private int classCount = 0;
-	private String password;
-	private Evaluation[] evaluate = new Evaluation[maxClasses];
-	private Classes[] classes = new Classes[maxClasses];
+	private Evaluation[] evaluate = new Evaluation[maxClass];
+	public Classes[] classes = new Classes[maxClass];
 	
 	//Constructor
-	public Student(String name,String id,String password) {
+	public Student(String name,String id) {
 		super("student",name,id);
-		this.password = password;
 	}
 	
 	//Method
@@ -18,29 +16,30 @@ public class Student extends Person{
 		classes[classCount] = newClass;
 		classCount++;
 	}
-	public void getEvaluationByClass(int selectSubject) {
+	
+	public void getEvaluationByClass(int selectSubject,int[] scores) {
 		evaluate[selectSubject] = new Evaluation();
-		evaluate[selectSubject].setEvalution();
+		evaluate[selectSubject].setScores(scores);
 		classes[selectSubject].appendEvaluation(evaluate[selectSubject]);
 	}
 	
+	public String getSpecificClassesName(int index) {
+		return classes[index].getTitle();
+	}
+
+	//Accessor
+	public int getClassCount() {
+		return classCount;
+	}
+	
+	public Classes[] getClasses() {
+		return classes;
+	}
+	/* CLI -> GUI
 	public void printAllClassesName() {
 		for(int i = 0; i < classCount; i++) {
 			System.out.println(i + ":" + classes[i].getTitle());
 		}		
 	}
-
-	//Mutator
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
-	//Accessor
-	public String getPassword() {
-		return password;
-	}
-	public String getSpecificClassesName(int index) {
-		return classes[index].getTitle();
-	}
-
+	*/
 }
