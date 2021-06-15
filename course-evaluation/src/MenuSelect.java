@@ -21,6 +21,9 @@ public class MenuSelect{
            }
         } catch (FileNotFoundException e) {
            // TODO Auto-generated catch block
+        	
+        	JOptionPane.showMessageDialog(null,"db_course.txt file doesn't exist!","Error Message",JOptionPane.WARNING_MESSAGE);
+        	
            e.printStackTrace();
         } catch (IOException e) {
            // TODO Auto-generated catch block
@@ -46,7 +49,7 @@ public class MenuSelect{
             String[] ary = line.split(",");
             Classes cl = Subject.getSubject(ary[0].substring(0, 5)).getClass(ary[0]);
             if (cl == null) {
-            	throw new Exception("존재하지 않는 분반입니다");
+            	throw new Exception("No exist class!!");
             }
             for (int i = 1; i < ary.length; i++) {
                Student elem = Student.getStudent("LOGIN YET",ary[i]);
@@ -54,7 +57,7 @@ public class MenuSelect{
             }
          }
       } catch (FileNotFoundException e) {
-         // TODO Auto-generated catch block
+    	  JOptionPane.showMessageDialog(null,"db_student.txt file doesn't exist!","Error Message",JOptionPane.WARNING_MESSAGE);
          e.printStackTrace();
       } catch (IOException e) {
          // TODO Auto-generated catch block

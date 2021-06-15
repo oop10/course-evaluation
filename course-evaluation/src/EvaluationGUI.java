@@ -10,17 +10,17 @@ public class EvaluationGUI extends JFrame{
 	public EvaluationGUI(Student user, int selectSubject) {
 		
 		setSize(WIDTH,HEIGHT);
-		setTitle("2. 강의 평가 하기 - 로그인 - 평가");
+		setTitle("Evaluate course - Evaluation");
 		
 		Container container = getContentPane();
 		container.setLayout(null);
 				
-		JLabel lblHead = new JLabel("  문제 번호 : 평가 내용                                                                                    점수 평가");
+		JLabel lblHead = new JLabel("  Question number : Evaluation content                                                     Score Evalutation");
 		lblHead.setBounds(3, 10,500,30);
 		container.add(lblHead);
 		
 		//Q1
-		JLabel lblQ1 = new JLabel("Question 1 : 강의 내용이 강의 계획서대로 진행되었다");
+		JLabel lblQ1 = new JLabel("Question 1 : The lecture was conducted according to the syllabus.");
 		lblQ1.setBounds(10,40,350,50);
 		container.add(lblQ1);
 		Choice choice1 = new Choice();
@@ -30,7 +30,7 @@ public class EvaluationGUI extends JFrame{
 		container.add(choice1);
 		
 		//Q2
-		JLabel lblQ2 = new JLabel("Question 2 : 수업을 위한 적절한 교육매체가 준비되었다");
+		JLabel lblQ2 = new JLabel("Question 2 : The education media is a proper for course ready.");
 		lblQ2.setBounds(10,90,350,50);
 		container.add(lblQ2);
 		Choice choice2 = new Choice();
@@ -40,7 +40,7 @@ public class EvaluationGUI extends JFrame{
 		container.add(choice2);
 		
 		//Q3
-		JLabel lblQ3 = new JLabel("Question 3 : 강의 진행은 체계적이었다");
+		JLabel lblQ3 = new JLabel("Question 3 : The progress of the course was systematic.");
 		lblQ3.setBounds(10,140,350,50);
 		container.add(lblQ3);
 		Choice choice3 = new Choice();
@@ -50,7 +50,7 @@ public class EvaluationGUI extends JFrame{
 		container.add(choice3);
 		
 		//Q4
-		JLabel lblQ4 = new JLabel("Question 4 : 나는 이 수업을 통하여 많은 지식을 얻었다");
+		JLabel lblQ4 = new JLabel("Question 4 : I gained a lot of knowledge through this course.");
 		lblQ4.setBounds(10,190,350,50);
 		container.add(lblQ4);
 		Choice choice4 = new Choice();
@@ -60,7 +60,7 @@ public class EvaluationGUI extends JFrame{
 		container.add(choice4);
 		
 		//Q5
-		JLabel lblQ5 = new JLabel("Question 5 : 나는 이 수업을 다른 학생에게 추천하고 싶다");
+		JLabel lblQ5 = new JLabel("Question 5 : I want to recommend this course to other students.");
 		lblQ5.setBounds(10,240,350,50);
 		container.add(lblQ5);
 		Choice choice5 = new Choice();
@@ -70,7 +70,7 @@ public class EvaluationGUI extends JFrame{
 		container.add(choice5);
 		
 		//submit button
-		JButton submitButton = new JButton("결과 제출");
+		JButton submitButton = new JButton("Submit Evalution");
 		submitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//score로 return 요망
