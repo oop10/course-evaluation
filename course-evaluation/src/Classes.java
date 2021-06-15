@@ -64,9 +64,10 @@ public class Classes extends Subject {
 		}
 		double average = 0;
 		for(Evaluation elem: evaluation) {
+			System.out.println("average" + average + "elem:" + elem.getEvaluation());
 			average += elem.getEvaluation();
 		}
-		average /= evaluation.length;
+		average = average / 5;
 		return average;
 	}
 	

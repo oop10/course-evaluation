@@ -49,15 +49,14 @@ public class Subject {
          throw new Exception("No Evaluation.");
       }
       
-      double score = 0;
+      double avg = 0;
       
       // Get sum of every class's average evaluation score.
       for(Classes elem: this.classes) {
-         score += elem.getAverage();
+         avg += elem.getAverage();
       }
-      score /= this.classes.length;
-      
-      return score;
+      avg /= this.classes.length;
+      return avg;
    }
    
    public void printAllEvaluation() throws Exception   {
@@ -136,8 +135,14 @@ public class Subject {
    
       return null;
    }
-
    
+   public static Subject[] getAllSubject() {
+	  return subjects;
+   }
+   
+   public static int getnumberofSubjects() {
+		 return numberOfSubjects;
+}
    // Constructor
    
    public Subject(String title, String code)   {

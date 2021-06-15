@@ -9,6 +9,7 @@ public class Evaluation {
 			scores[i] = newScore[i];
 		}
 	}
+	
 	/*// CLI -> GUI
 	public void setEvalution() {
 		
@@ -60,13 +61,17 @@ public class Evaluation {
 		
 	}
 	
-	public int getEvaluation()	{
-		int score = 0;
-		for(int elem: scores) {
-			score += elem;
-		}
-		return score;
-	}
+	public int getEvaluation()   {
+	      int score = 0;
+	      for(int i = 0; i < 5; i ++) {
+	         score = score + scores[i];
+	      }
+	      /*
+	      for(int elem: scores) {
+	         score += elem;
+	      }*/
+	      return score;
+	   }
 	
 
 }	

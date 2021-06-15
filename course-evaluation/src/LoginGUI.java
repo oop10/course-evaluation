@@ -59,7 +59,7 @@ public class LoginGUI extends JFrame implements ActionListener{
 		for(int i = 0; i < Student.getNumberOfStudent(); i++) {
 			if(allStudentId[i].equals(userId)) {
 				user = Student.getStudent(userName, userId);
-			}	
+			}
 		}
 		JPanel panel = new JPanel();
 		if(userId.length() != 9) {
