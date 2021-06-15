@@ -76,6 +76,11 @@ public class Student extends Person{
 	public static String[] getAllStudentId() {
 		return studentID;
 	}
+	
+	public static int getNumberOfStudent() {
+		return numberOfStudent;
+	}
+	
 	public int getClassCount() {
 		return classCount;
 	}
@@ -83,6 +88,7 @@ public class Student extends Person{
 	public Classes[] getClasses() {
 		return classes;
 	}
+	
 	/* CLI -> GUI
 	public void printAllClassesName() {
 		for(int i = 0; i < classCount; i++) {

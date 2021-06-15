@@ -56,8 +56,7 @@ public class LoginGUI extends JFrame implements ActionListener{
 		String userId = txtID.getText().trim();
 		String[] allStudentId = Student.getAllStudentId();
 		Student user = null;
-		for(int i = 0; i < allStudentId.length - 2; i++) {
-			System.out.println("all student id" + " i :" + i + " " + allStudentId[i]);
+		for(int i = 0; i < Student.getNumberOfStudent(); i++) {
 			if(allStudentId[i].equals(userId)) {
 				user = Student.getStudent(userName, userId);
 			}	
