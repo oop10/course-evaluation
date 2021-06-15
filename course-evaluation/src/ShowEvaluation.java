@@ -52,18 +52,25 @@ public class ShowEvaluation {
         int i = 30;
         int j;
         
+
         for(j = 0; j < Subject.getnumberofSubjects(); j++) {
         	JLabel label;
+        	String output = s[j].getTitle() + " / " + s[j].getCode() + " / ";
 			try {
-				label = new JLabel(s[j].getTitle() + " / " + s[j].getCode() + " / " + s[j].getAverage());
+				output += s[j].getAverage();
+
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				// JOptionPane.showMessageDialog(null, "Exception: " + e.getMessage());
+				System.out.println(e.getMessage());
+				output += "평가정보없음";
+			} finally {
+				label = new JLabel(output);
 				label.setFont(new Font("굴림", Font.BOLD, 15));
 	        	label.setHorizontalAlignment(SwingConstants.CENTER);
 	        	label.setBounds(119, 150 + i, WIDTH, 16);
 	        	frame.add(label);
 	        	i = i + 30;
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
         }
 		frame.setVisible(true);

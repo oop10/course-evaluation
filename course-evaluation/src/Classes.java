@@ -63,11 +63,10 @@ public class Classes extends Subject {
 			throw new Exception("No Evaluation.");
 		}
 		double average = 0;
-		for(Evaluation elem: evaluation) {
-			System.out.println("average" + average + "elem:" + elem.getEvaluation());
-			average += elem.getEvaluation();
+		for(int i = 0; i < this.numberOfEvaluations; i++)	{
+			average += this.evaluation[i].getEvaluation();
 		}
-		average = average / 5;
+		average /= this.numberOfEvaluations;
 		return average;
 	}
 	
