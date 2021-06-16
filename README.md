@@ -1,20 +1,29 @@
 # Course Evaluation System
 
-It’s a program where students log in with their own account and evaluate each subject.
+A program that students log in with their own account and evaluate each subject.
 
 The students can evaluate the lecture by giving scores to questions set by each subject.
-All lecture evaluations and ratings by lecture are also available.
+Every user can see average scores of all evaluations of Subjects.
 
-The professor can check the evaluated lecture rating and has the authority to modify the lecture.
 
 ## Quick Start
-Complie `Demo.java` and run it!
+Complie `course-evaluation/src/MenuSelect.java` and run it!
 
-## Members
+## Credit
 - Lee Eunseo
+  - Implement `MenuSelect.java`
+  - Produce presentation material
 - Han Sunggoo
+  - Implement `ShowEvaluation.java`
+  - Produce presentation material
 - Kim Bugyeong
+  - Implement `LoginGUI.java` and Evaluation page
+  - Make presentation video
 - Lee Jaehoon
+  - Implement `Subject.java`
+  - Organize and modify total classes
+  - Create [git repository](https://github.com/oop10/course-evaluation)
+  - Make [a wiki page](https://github.com/oop10/course-evaluation/wiki)
 
 ---
 Term Project in Object Oriented Programming, 2021 Spring.
