@@ -9,6 +9,7 @@ public class LoginGUI extends JFrame implements ActionListener{
 	public static final int WIDTH = 500;
 	public static final int HEIGHT = 500;
 	
+	private int isClassCount = 0;
 	private JLabel lblTitle = new JLabel("course evaluation system");
 	private JLabel lblName = new JLabel("N  A  M  E : ");
 	private JLabel lblID = new JLabel("STUDENT ID : ");
@@ -46,6 +47,7 @@ public class LoginGUI extends JFrame implements ActionListener{
 		
 		loginButton.addActionListener(this);
 		loginButton.setBounds(45,330,400,35);
+		loginButton.setBackground(Color.white);
 		container.add(loginButton);
 		
 	}
@@ -58,16 +60,19 @@ public class LoginGUI extends JFrame implements ActionListener{
 		Student user = null;
 		for(int i = 0; i < Student.getNumberOfStudent(); i++) {
 			if(allStudentId[i].equals(userId)) {
+				isClassCount = 1;
 				user = Student.getStudent(userName, userId);
 			}
 		}
+		
 		JPanel panel = new JPanel();
 		if(userId.length() != 9) {
 			//loginerror2
 			JOptionPane error2 = new JOptionPane();
 			JOptionPane.showMessageDialog(null,"Error at Student id. Please check your student id.");
+			
 		}
-		else if(user.getClassCount() == 0) {
+		else if(isClassCount == 0) {
 			//loginerror1
 			JOptionPane error1 = new JOptionPane();
 			JOptionPane.showMessageDialog(null,"There are no classes suitable for your student ID.");

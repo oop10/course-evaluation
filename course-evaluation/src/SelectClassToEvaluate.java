@@ -16,7 +16,7 @@ public class SelectClassToEvaluate extends JFrame{
 	
 	public SelectClassToEvaluate(Student user, int classCount) {
 		setSize(WIDTH, HEIGHT);
-		setTitle("2. 강의 평가 하기 - 평가 항목 선택");
+		setTitle("Evaluate course - Select evaluation course");
 		
 		Container container = getContentPane();
 		container.setLayout(null);
@@ -24,6 +24,7 @@ public class SelectClassToEvaluate extends JFrame{
 		for(i = 0; i < classCount; i++) {
 			String title = user.classes[i].getTitle();
 			classButton[i] = new JButton(title);
+			classButton[i].setBackground(Color.white);
 			classButton[i].addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					for(int j = 0; j < classCount; j++) {

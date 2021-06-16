@@ -21,7 +21,7 @@ public class EvaluationGUI extends JFrame{
 		
 		//Q1
 		JLabel lblQ1 = new JLabel("Question 1 : The lecture was conducted according to the syllabus.");
-		lblQ1.setBounds(10,40,350,50);
+		lblQ1.setBounds(10,40,390,50);
 		container.add(lblQ1);
 		Choice choice1 = new Choice();
 		choice1.add("1");choice1.add("2");choice1.add("3");choice1.add("4");choice1.add("5");
@@ -31,7 +31,7 @@ public class EvaluationGUI extends JFrame{
 		
 		//Q2
 		JLabel lblQ2 = new JLabel("Question 2 : The education media is a proper for course ready.");
-		lblQ2.setBounds(10,90,350,50);
+		lblQ2.setBounds(10,90,390,50);
 		container.add(lblQ2);
 		Choice choice2 = new Choice();
 		choice2.add("1");choice2.add("2");choice2.add("3");choice2.add("4");choice2.add("5");
@@ -41,7 +41,7 @@ public class EvaluationGUI extends JFrame{
 		
 		//Q3
 		JLabel lblQ3 = new JLabel("Question 3 : The progress of the course was systematic.");
-		lblQ3.setBounds(10,140,350,50);
+		lblQ3.setBounds(10,140,390,50);
 		container.add(lblQ3);
 		Choice choice3 = new Choice();
 		choice3.add("1");choice3.add("2");choice3.add("3");choice3.add("4");choice3.add("5");
@@ -51,7 +51,7 @@ public class EvaluationGUI extends JFrame{
 		
 		//Q4
 		JLabel lblQ4 = new JLabel("Question 4 : I gained a lot of knowledge through this course.");
-		lblQ4.setBounds(10,190,350,50);
+		lblQ4.setBounds(10,190,390,50);
 		container.add(lblQ4);
 		Choice choice4 = new Choice();
 		choice4.add("1");choice4.add("2");choice4.add("3");choice4.add("4");choice4.add("5");
@@ -61,7 +61,7 @@ public class EvaluationGUI extends JFrame{
 		
 		//Q5
 		JLabel lblQ5 = new JLabel("Question 5 : I want to recommend this course to other students.");
-		lblQ5.setBounds(10,240,350,50);
+		lblQ5.setBounds(10,240,390,50);
 		container.add(lblQ5);
 		Choice choice5 = new Choice();
 		choice5.add("1");choice5.add("2");choice5.add("3");choice5.add("4");choice5.add("5");
@@ -87,9 +87,13 @@ public class EvaluationGUI extends JFrame{
 				scores[4] = Integer.parseInt(Q5Result);
 				
 				user.getEvaluationByClass(selectSubject, scores);
+				
+				JOptionPane error = new JOptionPane();
+				JOptionPane.showMessageDialog(null,"Complete submit your evaluation!");
 			}
 		});
 		submitButton.setBounds(45,330,400,35);
+		submitButton.setBackground(Color.white);
 		container.add(submitButton);
 		container.setVisible(true);
 	}

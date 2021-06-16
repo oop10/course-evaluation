@@ -3,7 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class MenuSelect{
+public class MenuSelect extends JFrame{
 
    private JFrame frame;
    private static final String COURSE_DB_FILE = "db_course.txt";
@@ -14,25 +14,24 @@ public class MenuSelect{
         try {
            inputStream = new BufferedReader(new FileReader(COURSE_DB_FILE));
            String line = null;
-           line = inputStream.readLine();   // 첫줄생략
+           line = inputStream.readLine();
            while((line = inputStream.readLine()) != null) {
               String[] ary = line.split(",");
               Classes elem = new Classes(ary[1], ary[0].substring(0, 5), ary[2], ary[0], ary[3], ary[4]);
            }
         } catch (FileNotFoundException e) {
-           // TODO Auto-generated catch block
-        	
+          
         	JOptionPane.showMessageDialog(null,"db_course.txt file doesn't exist!","Error Message",JOptionPane.WARNING_MESSAGE);
         	
            e.printStackTrace();
         } catch (IOException e) {
-           // TODO Auto-generated catch block
+         
            e.printStackTrace();
         } finally {
            try {
             inputStream.close();
          } catch (IOException e) {
-            // TODO Auto-generated catch block
+          
             e.printStackTrace();
          }
         }
@@ -110,39 +109,38 @@ public class MenuSelect{
       frame.getContentPane().add(lblNewLabel);
       //frame.getContentPane().setBackground(Color.lightGray);
       
-      JButton btnNewButton = new JButton("Show course evaluation");
-      btnNewButton.setFont(new Font("Nirmala UI", Font.BOLD, 12));
-      btnNewButton.setBounds(52, 160, 168, 160);
-      btnNewButton.setBackground(Color.white);
-      btnNewButton.addActionListener(new ActionListener() {
+      JButton btnShow = new JButton("Show course evaluation");
+      btnShow.setFont(new Font("Nirmala UI", Font.BOLD, 12));
+      btnShow.setBounds(52, 160, 168, 160);
+      btnShow.setBackground(Color.white);
+      btnShow.addActionListener(new ActionListener() {
          @Override
          public void actionPerformed(ActionEvent e) {
             new ShowEvaluation();
-            frame.setVisible(false);
-            
+
          }
       });
       
       frame.getContentPane().setLayout(null);
-      frame.getContentPane().add(btnNewButton);
+      frame.getContentPane().add(btnShow);
       
-      JButton btnNewButton_1 = new JButton("Evaluate my course");
-      btnNewButton_1.setFont(new Font("Nirmala UI", Font.BOLD, 14));
-      btnNewButton_1.setBounds(259, 160, 168, 160);
-      btnNewButton_1.setBackground(Color.white);
-      btnNewButton_1.addActionListener(new ActionListener() {
+      JButton btnEvaluate = new JButton("Evaluate my course");
+      btnEvaluate.setFont(new Font("Nirmala UI", Font.BOLD, 14));
+      btnEvaluate.setBounds(259, 160, 168, 160);
+      btnEvaluate.setBackground(Color.white);
+      btnEvaluate.addActionListener(new ActionListener() {
          @Override
          public void actionPerformed(ActionEvent e) {
         	LoginGUI a = new LoginGUI();
      		a.setVisible(true);
-        	//new DoEvaluation();
-            //frame.setVisible(false);
+        
          }
       });
       
       frame.getContentPane().setLayout(null);
-      frame.getContentPane().add(btnNewButton_1);
+      frame.getContentPane().add(btnEvaluate);
       
+
 
    }
 }

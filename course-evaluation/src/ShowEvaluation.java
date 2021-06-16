@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Scanner;
 
-public class ShowEvaluation {
+public class ShowEvaluation extends JFrame{
 	public static final int WIDTH = 500;
 	public static final int HEIGHT = 500;
 	private JFrame frame;
@@ -26,7 +26,7 @@ public class ShowEvaluation {
 		try {
 			initialize();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+		
 			e.printStackTrace();
 		}
 	}
@@ -44,7 +44,7 @@ public class ShowEvaluation {
 		lblNewLabel.setBounds(107, 42, 253, 26);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JLabel evaluationlabel = new JLabel("  Subject Id / Subject / Average evaluation score");
+		JLabel evaluationlabel = new JLabel("  Subject / Subject Id / Average evaluation score");
 		evaluationlabel.setHorizontalAlignment(SwingConstants.CENTER);
 		evaluationlabel.setFont(new Font("Nirmala UI", Font.BOLD, 20));
 		evaluationlabel.setBounds(-16, 78, 500, 40);
@@ -59,6 +59,7 @@ public class ShowEvaluation {
         	String output = s[j].getTitle() + " / " + s[j].getCode() + " / ";
 			try {
 				output += s[j].getAverage();
+				
 
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -74,20 +75,9 @@ public class ShowEvaluation {
 	        	i = i + 30;
 			}
         }
+		
 		frame.setVisible(true);
-		
-		
-		JButton btnNewButton = new JButton("Go main..");
-		btnNewButton.setBounds(375, 401, 97, 23);
-	
-//		btnNewButton.addActionListener(new ActionListener() {
-//			@Override
-//			public void actionPerforemed(ActionEvent e) {
-//				MenuSelect menu = new MenuSelect();
-//				menu.setVisible(true);
-//				frame.setVisible(false);
-//			}
-//			});
-		frame.getContentPane().add(btnNewButton);
 	}
+
+	
 }
